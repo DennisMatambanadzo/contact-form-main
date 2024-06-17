@@ -4,57 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- remixicon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Document</title>
 </head>
 
 <body>
     <div class="container">
-        <form action="" class="form">
+        <div class="modal" id="modal">
+            <div class="sent"><i class="ri-checkbox-circle-line"></i>Message Sent!</div>
+            <div class="thanks">Thanks for completing the form. We'll be in touch soon!</div>
+        </div>
+        <form class="form" id="form">
             <div class="contact-us">Contact Us</div>
             <div class="input-container">
                 <div class="name-group">
                     <div class="form-group">
                         <label for="first-name">First Name <span class="green-star">*</span></label>
-                        <input type="text" name="first-name" class="form-input">
+                        <input type="text" name="first-name" id="first-name" class="form-input">
+                        <div class="error off" id="first-name-error">This field is required</div>
                     </div>
                     <div class="form-group">
                         <label for="last-name">Last Name <span class="green-star">*</span></label>
-                        <input type="text" name="last-name" class="form-input">
+                        <input type="text" name="last-name" id="last-name" class="form-input">
+                        <div class="error off" id="last-name-error">This field is required</div>
+                    </div>
+                    <div class="name-errors">
+
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address <span class="green-star">*</span></label>
-                    <input type="text" name="email" class="form-input">
+                    <input type="email" name="email" id="email" class="form-input">
+                    <div class="error off" id="email-error">Please enter valid email</div>
                 </div>
-                <div class="form-group">
+                <div class="form-group radio-check">
                     <label for="query">Query Type <span class="green-star">*</span></label>
                     <div class="radio-inputs">
                         <label class="radio-label" for="">
-                            <input type="radio" name="query">
+                            <input type="radio" name="query" id="radio">
                             General Enquiry
                         </label>
-                        <label  class="radio-label"for="">
-                            <input type="radio" name="query">
+                        <label class="radio-label" for="">
+                            <input type="radio" name="query" id="radio">
                             Support Request
                         </label>
+                        <div class="error off" id="radio-error">
+                            This field is required</div>
                     </div>
+                    <!-- <label>Query Type</label>
+                    <div class="radio-content">
+                        <div class="radio">
+                            <input type="radio" id="general" class="radio1">
+                            <label for="general"><span class="radio-btn"></span>General Enquiry</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="support" class="radio2">
+                            <label for="support"><span class="radio-btn"></span>Support Request</label>
+                        </div>
+                    </div> -->
+
                 </div>
                 <div class="form-group">
                     <label for="message">Message <span class="green-star">*</span></label>
                     <textarea rows="7" name="message" id="message"></textarea>
+                    <div class="error off" id="message-error">This field is required</div>
                 </div>
                 <div class="form-group">
                     <div class="check-box-group">
-                        <input type="checkbox" class="check-box">
-                        <span>I consent to being contacted by the team <span class="greenstar">*</span></span>
+                        <input type="checkbox" class="check-box" id="check-box">
+                        <span>I hereby consent to being contacted by the team <span class="greenstar">*</span></span>
                     </div>
+                    <div class="error off" id="checkbox-error">
+                        This field is required</div>
                 </div>
-                <button class="submit-btn">Submit</button>
+                <button class="submit-btn" id="submit-btn">Submit</button>
             </div>
         </form>
-    </div>
 
+    </div>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>
